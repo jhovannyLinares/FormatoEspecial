@@ -1,0 +1,108 @@
+/* ########################################################################################################################## */
+body {
+	padding-top: 5em;
+/* 	background-color: #621132; */
+/* 	BACKGROUND-COLOR: #621132; */
+/* 	background-color: #56242A; */
+/* 	background-color: #4E232E;  */
+}
+
+/* ########################################################################################################################## */
+.navbar {
+	color: #642424;
+	background-color: #642424;
+}
+
+.logo-main {
+	background-image:
+		url(https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg)
+		!important;
+	top: 0px;
+	height: 50px;
+	margin: 1px auto 0 auto;
+	width: 150px;
+	background-repeat: no-repeat;
+}
+
+.navbar-brand, .nav-link, .navbar-brand-center {
+	text-decoration: none;
+	color: white !important;
+	font-size: 16px !important;
+	font-weight: bolder;
+	background-color: transparent;
+}
+
+.navbar-brand-center {
+	float: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.parent {
+  height: 20em;
+/*   position: absolute; */
+  left: 50%;
+  top: 50%;
+/*   transform: translate(-50%, -50%); */
+}
+
+.parentMenu {
+    height: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ########################################################################################################################## */
+.parent {
+	vertical-align: middle;
+}
+
+.btn-icon {
+	background-color: #68A9CF;
+	color: #fff;
+	width: 200px;
+	height: 200px;
+	margin-bottom: 10px;
+}
+
+.bd-callout-info:not(.active){
+  display:none;
+}
+
+/* ########################################################################################################################## */
+.gray {
+	background-color: #d8d8d8;
+}
+
+.white {
+/* 	background-color:yellow; */
+/* 	border-color: orange; */
+/* 	border-style: solid;  */
+}
+
+/* Poner texto del p�rrafo en negrita. */
+p {
+  font-weight: bold;
+}
+
+input{
+	text-transform: uppercase;
+}
+
+.bd-callout-info {
+    border-left-color: #9D2449 !important;
+    background-color: white !important;
+}
+
+.bd-callout {
+/*     padding: 1.25rem; */
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #b3b1b1;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title th:text="#{Texto.Titulo}"></title>
+    <meta name="description" th:content="#{Texto.Leyenda}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/recursos/assets/css/FUB-Login.css}">
+</head>
+
+<body class="login-clean">
+
+    <form method="post" th:action="@{/seguridad/registrar}" th:object="${registroDTO}">
+        <div class="illustration"><span th:text="#{Texto.Registrar}"></span></div>   
+        
+
+        <div class="form-group">
+            <input type="text" th:field="*{curp}" class="form-control"  th:placeholder="#{Texto.Username}" />
+        </div>
+        
+        <div class="form-group">
+            <input type="text" th:field="*{nombre}" class="form-control"  th:placeholder="#{Texto.Nombre.Completo}" />
+        </div>
+        
+         <div class="form-group">
+            <a href="/seguridad/login"> <spam th:text ="#{Texto.Iniciar}" ></spam> </a>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" id="submit" th:text="#{Boton.Ingresar}"  
+            onclick="cargar()"></button>
+        </div>
+    </form>
+    <script th:src="@{/recursos/assets/js/sweetalert/sweetalert.min2.js}"></script>
+    <script th:src="@{/recursos/assets/js/jquery.login.js}"></script>
+</body>
+
+</html>

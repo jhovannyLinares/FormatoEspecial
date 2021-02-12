@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/global">
+
+<body>
+    <div class="container">
+
+        <div layout:fragment="contenido">
+            <!-- Contenido -->
+
+            <div class="parent">
+
+                <form role="form" class="needs-validation" method="get" th:action="@{/formulario/pagina1}" novalidate>
+                    <div class="form-row text-center active">
+
+                        <div class="swal-icon swal-icon--success">
+                            <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+                            <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+
+                            <div class="swal-icon--success__ring"></div>
+                            <div class="swal-icon--success__hide-corners"></div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <h1 class="text-center"><strong th:text="#{Texto.Registro.Guardado}"></strong></h1>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <h2 class="text-center"><span th:text="#{Texto.Registro.Msg}"></span></h2>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <strong ></strong>
+                            
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <br>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <strong><label for="folio" th:text="#{Texto.Registro.Msg3}"></label></strong>
+                            <input type="text" th:value="${param.folio[0]}" class="border rounded form-control text-center" readonly/>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                        </div>
+
+                        <div class="col-sm-12 text-center">
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit" th:text="#{Boton.Aceptar}"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contenido -->
+        </div>
+
+    </div>
+
+</body>
+
+</html>

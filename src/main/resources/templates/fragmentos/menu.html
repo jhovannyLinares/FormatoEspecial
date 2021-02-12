@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/principal">
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" layout:fragment="menu">
+        <div class="container-fluid">
+
+<!--             <a href="/" style="padding: 1px 3px 3px 3px;" class="navbar-brand " title="Ir a la página inicial"> -->
+                <!--  <div class="logo-main"></div>-->
+<!--             </a> -->
+
+<!--             <a class="navbar-brand-center" th:href="@{/formulario/principal}" th:title="#{Texto.Titulo}">  -->
+<!--<div class="navbar-brand-center">
+            <span th:text="#{Texto.Si}"></span>
+            </div>
+             </a> -->
+
+            <div class="collapse navbar-collapse te text-white" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    
+                    <li class="nav-item"><a class="nav-link" th:href="@{/seguridad/logout}"><span th:text="#{Menu.Exit}"></span></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</body>
+
+</html>

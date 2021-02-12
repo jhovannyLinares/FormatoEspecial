@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title th:text="#{Texto.Titulo}"></title>
+    <meta name="description" th:content="#{Subtitulo}">
+    <link rel="stylesheet" th:href="@{/recursos/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" th:href="@{/recursos/assets/fonts/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/recursos/assets/fonts/ionicons.min.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" th:href="@{/recursos/assets/css/FUB-Style.css}">
+</head>
+
+<body id="page-top">
+    <header class="d-flex masthead" style="background-image: url('recursos/assets/img/bg-masthead.jpg');background-size: cover;background-repeat: no-repeat;height: 100%;">
+        <div class="container my-auto text-center parent">
+            <h1 class="mb-1"><span th:text="#{Texto.Titulo}"></span></h1>
+            
+            <a class="btn btn-primary border rounded shadow-lg pulse animated btn-xl js-scroll-trigger" role="button" th:href="@{/seguridad/login}"><span th:text="#{Boton.Inicio}"></span></a>
+            <div class="overlay"></div>
+        </div>
+    </header>
+    <script th:src="@{/recursos/assets/js/jquery.min.js}"></script>
+    <script th:src="@{/recursos/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/recursos/assets/js/stylish-portfolio.js}"></script>
+    <script th:src="@{/recursos/assets/js/image-card-materialize.js}"></script>
+</body>
+
+</html>

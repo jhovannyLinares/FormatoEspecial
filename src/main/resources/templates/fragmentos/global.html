@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" th:content="#{Texto.Leyenda}">
+    <title th:text="#{Texto.Titulo}"></title>
+    <link rel="stylesheet" th:href="@{/recursos/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" th:href="@{/recursos/assets/css/FUB-Style.css}">
+</head>
+
+<body onload="nobackbutton();">
+
+    <div layout:replace="fragmentos/menu :: menu"></div>
+
+    <div class="container">
+        <div layout:fragment="contenido" id="contenido"></div>
+    </div>
+	<script th:src="@{/recursos/assets/js/jquery.form.js}"></script>
+    <script th:src="@{/recursos/assets/js/jquery.min.js}"></script>
+    <script th:src="@{/recursos/assets/bootstrap/js/bootstrap.min.js}"></script>
+    
+	<script th:src="@{/recursos/assets/js/sweetalert/sweetalert.min.js}"></script>
+</body>
+
+</html>
