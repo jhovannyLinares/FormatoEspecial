@@ -30,17 +30,17 @@ public class CatalogoController {
 
 	}
 
-	@GetMapping("/municipio/{id}/seccion")
-	private String getSeccionByMunicipio(Model model, @PathVariable("id") Long id) {
+	@GetMapping("/municipio/{id}/localidad")
+	private String getLocalidadByMunicipio(Model model, @PathVariable("id") Long id) {
 
-		return ICatService.getSeccionByMunicipio(model, id);
+		return ICatService.getLocalidadByMunicipio(model, id);
 
 	}
 
-	@GetMapping("/seccion/{id}/localidad")
-	private String getLocalidadBySeccion(Model model, @PathVariable("id") Long id) {
+	@GetMapping("/localidad/{id}/seccion")
+	private String getSeccionByLocalidad(Model model, @PathVariable("id") Long id) {
 
-		return ICatService.getLocalidadBySeccion(model, id);
+		return ICatService.getSeccionByLocalidad(model, id);
 
 	}
 

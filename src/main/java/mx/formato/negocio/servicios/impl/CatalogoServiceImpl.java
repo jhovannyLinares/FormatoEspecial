@@ -21,8 +21,8 @@ import mx.formato.persistencia.entidades.Municipio;
 import mx.formato.persistencia.entidades.SeccionElectoral;
 import mx.formato.persistencia.repositorio.IDistritoFederalRepository;
 import mx.formato.persistencia.repositorio.IDistritoLocalRepository;
+import mx.formato.persistencia.repositorio.ILocalidadRepository;
 import mx.formato.persistencia.repositorio.IMunicipioRepository;
-import mx.formato.persistencia.repositorio.ISeccionElectoralRepository;
 
 @Service
 public class CatalogoServiceImpl implements ICatalogoService {
@@ -37,12 +37,12 @@ public class CatalogoServiceImpl implements ICatalogoService {
 	private IMunicipioRepository municipioRepository;
 
 	@Autowired
-	private ISeccionElectoralRepository seccionElectoral;
+	private ILocalidadRepository localidadRepository;
 
 	@Override
 	public String getDistritosLocales(Model model, Long id) {
 		model.addAttribute("formatoDTO", new FormatoDTO());
-		
+
 		model.addAttribute("direccion", new DireccionVO());
 
 		List<DistritoLocal> list = federalRepository.findById(id).get().getDistritosLocales();
@@ -71,32 +71,30 @@ public class CatalogoServiceImpl implements ICatalogoService {
 	}
 
 	@Override
-	public String getSeccionByMunicipio(Model model, Long id) {
+	public String getLocalidadByMunicipio(Model model, Long id) {
 		model.addAttribute("formatoDTO", new FormatoDTO());
 		model.addAttribute("direccion", new DireccionVO());
-//		model.addAttribute("secciones", municipioRepository.findById(id).get().getSeccionesElectorales());
 
-		List<SeccionElectoral> list = municipioRepository.findById(id).get().getSeccionesElectorales();
-		List<SeccionElectoralVO> listVO = new ArrayList<SeccionElectoralVO>();
-		listVO = MapperUtil.mapAll(list, SeccionElectoralVO.class);
-
-		model.addAttribute("secciones", listVO);
-
-		return "/formulario/pagina1 :: divSeccion";
-	}
-
-	@Override
-	public String getLocalidadBySeccion(Model model, Long id) {
-		model.addAttribute("formatoDTO", new FormatoDTO());
-		model.addAttribute("direccion", new DireccionVO());
-//		model.addAttribute("localidades", seccionElectoral.findById(id).get().getLocalidades());
-
-		List<Localidad> list = seccionElectoral.findById(id).get().getLocalidades();
+		List<Localidad> list = municipioRepository.findById(id).get().getLocalidades();
 		List<LocalidadVO> listVO = new ArrayList<LocalidadVO>();
 		listVO = MapperUtil.mapAll(list, LocalidadVO.class);
 
 		model.addAttribute("localidades", listVO);
 
 		return "/formulario/pagina1 :: divLocalidad";
+	}
+
+	@Override
+	public String getSeccionByLocalidad(Model model, Long id) {
+		model.addAttribute("formatoDTO", new FormatoDTO());
+		model.addAttribute("direccion", new DireccionVO());
+
+		List<SeccionElectoral> list = localidadRepository.findById(id).get().getSeccionElectorales();
+		List<SeccionElectoralVO> listVO = new ArrayList<SeccionElectoralVO>();
+		listVO = MapperUtil.mapAll(list, SeccionElectoralVO.class);
+
+		model.addAttribute("secciones", listVO);
+
+		return "/formulario/pagina1 :: divSeccion";
 	}
 }

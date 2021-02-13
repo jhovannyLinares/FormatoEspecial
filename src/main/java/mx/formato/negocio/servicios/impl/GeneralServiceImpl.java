@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import mx.formato.negocio.dto.FormatoDTO;
 import mx.formato.negocio.servicios.IGeneralService;
@@ -48,7 +47,7 @@ public class GeneralServiceImpl implements IGeneralService {
 	}
 
 	@Override
-	public String save(HttpSession session, FormatoDTO dto, RedirectAttributes redirec) {
+	public String save(HttpSession session, FormatoDTO dto) {
 
 		Usuario usuario = new Usuario();
 		usuario.setId(Long.valueOf(session.getAttribute("idUser").toString()));

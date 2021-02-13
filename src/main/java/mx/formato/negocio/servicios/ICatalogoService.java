@@ -14,7 +14,7 @@ public interface ICatalogoService {
 	String getMunicipiosByDistritosLocales(Model model, Long id);
 
 
-	String getSeccionByMunicipio(Model model, Long id);
+	String getLocalidadByMunicipio(Model model, Long id);
 
-	String getLocalidadBySeccion(Model model, Long id);
+	String getSeccionByLocalidad(Model model, Long id);
 }

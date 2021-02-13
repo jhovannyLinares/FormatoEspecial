@@ -1,12 +1,16 @@
 package mx.formato.persistencia.entidades;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,7 +19,6 @@ import javax.persistence.Table;
 public class Localidad {
 
 	public Localidad() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Id
@@ -27,11 +30,13 @@ public class Localidad {
 	@Column(name = "descripcion_localidad")
 	private String descripcion;
 
-	/** UNA A MUCHAS */
-	/** relacion con seccion */
+	/** Relacion con Municipios */
 	@ManyToOne
-	@JoinColumn(name = "seccion_id")
-	private SeccionElectoral seccionElectoral;
+	@JoinColumn(name = "municipio_id")
+	private Municipio municipio;
+	
+	@OneToMany(mappedBy = "localidad", fetch = FetchType.LAZY)
+	private List<SeccionElectoral> seccionElectorales;
 
 	public long getId() {
 		return id;
@@ -49,12 +54,20 @@ public class Localidad {
 		this.descripcion = descripcion;
 	}
 
-	public SeccionElectoral getSeccionElectoral() {
-		return seccionElectoral;
+	public Municipio getMunicipio() {
+		return municipio;
 	}
 
-	public void setSeccionElectoral(SeccionElectoral seccionElectoral) {
-		this.seccionElectoral = seccionElectoral;
+	public void setMunicipio(Municipio municipio) {
+		this.municipio = municipio;
+	}
+
+	public List<SeccionElectoral> getSeccionElectorales() {
+		return seccionElectorales;
+	}
+
+	public void setSeccionElectorales(List<SeccionElectoral> seccionElectorales) {
+		this.seccionElectorales = seccionElectorales;
 	}
 
 }

@@ -62,7 +62,7 @@
 	                     <div class="form-group">
 	                        <label for="municipio" th:text="#{Texto.Municipio}"></label> 
 	                        <select
-	                           onchange="cargarSeccion(this,'divSeccion')"
+	                           onchange="cargarLocalidad(this,'divLocalidad')"
 	                           class="form-control" th:field="${formatoDTO.direccion.municipio}" id="municipio" required>
 	                           <option value="0" th:text="#{Texto.Select}"></option>
 	                           <option th:each="municipio : ${municipios}"
@@ -79,6 +79,7 @@
 	                     <div class="form-group">
 	                        <label for="localidad" th:text="#{Texto.Localidad}"></label> 
 	                        <select
+	                        onchange="cargarSeccion(this,'divSeccion')"
 	                           class="form-control" th:field="${formatoDTO.direccion.localidad}" id="localidad" required>
 	                           <option value="0" th:text="#{Texto.Select}"></option>
 	                           <option th:each="localidad : ${localidades}"
@@ -93,7 +94,7 @@
 	                     
 	                     <div class="form-group">
 	                        <label for="seccion" th:text="#{Texto.seccionElectoral}"></label>
-	                        <select  onchange="cargarLocalidad(this,'divLocalidad')"
+	                        <select  
 	                         class="form-control" th:field="${formatoDTO.direccion.seccionElectoral}" id="seccion" required>
 	                           <option value="0" th:text="#{Texto.Select}"></option>
 	                           <option th:each="seccion : ${secciones}"

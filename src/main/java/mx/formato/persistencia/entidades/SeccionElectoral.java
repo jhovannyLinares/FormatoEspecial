@@ -1,17 +1,12 @@
 package mx.formato.persistencia.entidades;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -29,14 +24,10 @@ public class SeccionElectoral {
 	private String descripcion;
 
 	@ManyToOne
-	@JoinColumn(name = "id_municipio")
-	private Municipio municipio;
+	@JoinColumn(name = "id_localidad")
+	private Localidad localidad;
 
-	@OneToMany(mappedBy = "seccionElectoral", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Localidad> localidades;
-	
 	public SeccionElectoral() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getId() {
@@ -55,22 +46,14 @@ public class SeccionElectoral {
 		this.descripcion = descripcion;
 	}
 
-	public Municipio getMunicipio() {
-		return municipio;
+	public Localidad getLocalidad() {
+		return localidad;
 	}
 
-	public void setMunicipio(Municipio municipio) {
-		this.municipio = municipio;
+	public void setLocalidad(Localidad localidad) {
+		this.localidad = localidad;
 	}
-
-	public List<Localidad> getLocalidades() {
-		return localidades;
-	}
-
-	public void setLocalidades(List<Localidad> localidades) {
-		this.localidades = localidades;
-	}
-
+	
 	
 
 }

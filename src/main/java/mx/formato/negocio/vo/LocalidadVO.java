@@ -1,12 +1,10 @@
 package mx.formato.negocio.vo;
 
-import java.util.List;
-
 public class LocalidadVO {
 
 	private long id;
 	private String descripcion;
-	private List<SeccionElectoralVO> seccion;
+	private MunicipioVO municipio;
 
 	public LocalidadVO() {
 		// TODO Auto-generated constructor stub
@@ -28,12 +26,12 @@ public class LocalidadVO {
 		this.descripcion = descripcion;
 	}
 
-	public List<SeccionElectoralVO> getSeccion() {
-		return seccion;
+	public MunicipioVO getMunicipio() {
+		return municipio;
 	}
 
-	public void setSeccion(List<SeccionElectoralVO> seccion) {
-		this.seccion = seccion;
+	public void setMunicipio(MunicipioVO municipio) {
+		this.municipio = municipio;
 	}
 
 }

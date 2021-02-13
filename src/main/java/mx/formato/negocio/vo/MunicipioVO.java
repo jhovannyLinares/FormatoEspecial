@@ -1,12 +1,14 @@
 package mx.formato.negocio.vo;
 
-import mx.formato.persistencia.entidades.DistritoLocal;
+import java.util.List;
+
+import mx.formato.persistencia.entidades.Localidad;
 
 public class MunicipioVO {
 
 	private long id;
 	private String descripcion;
-	private DistritoLocal distritoLocal;
+	private List<LocalidadVO> seccionesElectorales;
 
 	public MunicipioVO() {
 		// TODO Auto-generated constructor stub
@@ -28,12 +30,12 @@ public class MunicipioVO {
 		this.descripcion = descripcion;
 	}
 
-	public DistritoLocal getDistritoLocal() {
-		return distritoLocal;
+	public List<LocalidadVO> getSeccionesElectorales() {
+		return seccionesElectorales;
 	}
 
-	public void setDistritoLocal(DistritoLocal distritoLocal) {
-		this.distritoLocal = distritoLocal;
+	public void setSeccionesElectorales(List<LocalidadVO> seccionesElectorales) {
+		this.seccionesElectorales = seccionesElectorales;
 	}
 
 }

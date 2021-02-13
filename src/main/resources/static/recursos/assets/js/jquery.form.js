@@ -18,7 +18,7 @@ function cargarMunicipio(element,div) {
 
 function cargarSeccion(element,div) {
 	var pathArray = window.location.pathname.split('/');
-	var url = 'catalogo/municipio/'+ element.value  +'/seccion';
+	var url = 'catalogo/localidad/'+ element.value  +'/seccion';
 
 		$('#'+div).load(url);
 	
@@ -26,7 +26,7 @@ function cargarSeccion(element,div) {
 
 function cargarLocalidad(element,div) {
 	var pathArray = window.location.pathname.split('/');
-	var url = 'catalogo/seccion/'+ element.value  +'/localidad';
+	var url = 'catalogo/municipio/'+ element.value  +'/localidad';
 
 		$('#'+div).load(url);
 	
